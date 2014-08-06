@@ -48,6 +48,10 @@ endif
 
 LOCAL_MODULE:= libinputservice
 
+ifeq ($(BOARD_HAS_EXTENDED_SWITCH),true)
+LOCAL_CFLAGS += -DEXTENDED_SWITCH
+endif
+
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
